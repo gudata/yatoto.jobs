@@ -1,0 +1,16 @@
+doctype html
+html class="no-js" lang="#{I18n.locale}"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="viewport" content="width=980"
+    title
+      | We want you!
+    = favicon_link_tag '/favicon.ico', type: 'image/x-icon'
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
+  .container.main
+    = yield
