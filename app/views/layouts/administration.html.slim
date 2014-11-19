@@ -12,8 +12,20 @@ html class="no-js" lang="#{I18n.locale}"
 
     = csrf_meta_tags
 body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
+  ol.breadcrumb
+    li = link_to "Home", root_url
+    li.active = "Administrator"
   .container.main
-    = yield
+    .icon.hidden-xs = image_tag('admin.png')
+    h1 = "The path of system administrator"
+    .jumbotron
+      = yield
+    - if @progressbar_value > 0
+      .progress
+        .progress-bar role="progressbar" aria-valuenow=@progressbar_value aria-valuemin="0" aria-valuemax="100" style="width: #{@progressbar_value}%;"
+          = "#{@progressbar_value}%"
+
+
 
 - 4.times do |key|
   - key = "question_#{key}"

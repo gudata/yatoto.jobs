@@ -44,3 +44,9 @@ gem "slim-rails"
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'heroku'
+
+gem 'rails_12factor', group: :production
+gem 'wicked'
+gem 'simple_form', '>= 3.1.0.rc1'
+gem "better_errors"
+gem "binding_of_caller"
