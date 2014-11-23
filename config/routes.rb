@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   resources :administrators
 
+  resources :secrets do
+    collection do
+      get :header
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

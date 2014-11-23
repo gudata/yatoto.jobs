@@ -17,7 +17,7 @@ class AdministratorsController < ApplicationController
   end
 
   def show
-    @question = Question.new
+    @question = Question.new(params[:question], step, session)
     case step
     when :question_1
     end
@@ -25,19 +25,22 @@ class AdministratorsController < ApplicationController
   end
 
   def update
-    @question = Question.new(params[:question])
+    @question = Question.new(params[:question], step, session)
 
     if @question.valid?
       session[step]['passed'] = '1'
     end
 
     case step
-    when :question_1
-    when :question_2
-    when :question_3
-    when :question_4
-    when :question_5
-    when :leave_email
+    when :'100_question'
+    when :'700_contacts'
+      questions = steps.collect do |step|
+        question = Question.new(nil, step, session)
+        question.start = session[step]['start']
+        question.duration = session[step]['duration']
+        question
+      end
+      AnswersMailer.new_candidate 'Administrator', questions
     end
 
     render_wizard @question

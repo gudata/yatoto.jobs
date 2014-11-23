@@ -1,0 +1,15 @@
+h3
+  | Introduce yourself
+
+p Give us some information about you. We would love to see your...
+ul
+  li github
+  li linkedin profile
+  li blog
+  li website
+
+.well
+  = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
+    = form.input :answer, as: :text, label: 'Paste the links or write a poem'
+    = link_to 'skip', next_wizard_path, class: 'pull-right'
+    = form.button :submit, 'Submit'

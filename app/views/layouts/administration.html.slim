@@ -26,7 +26,7 @@ body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
           = "#{@progressbar_value}%"
 
 
-
-- 4.times do |key|
-  - key = "question_#{key}"
-  p = "#{key} ->#{session[key]}"
+- if Rails.env.development?
+  ul
+    = request.session.keys.each do |key|
+      li = "#{key} --> #{session[key].inspect}"

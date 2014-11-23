@@ -1,0 +1,30 @@
+h3 Welcome
+
+.well
+  p
+    '
+      We are searching for a person who can help us build the new infrastructure of
+    = link_to 'www.yatoto.com', 'http://www.yatoto.com'
+  p Here's a small list of the tasks that we need to solve in the near future
+  pre
+    |
+      Administration:
+      ☐ make nginx return 304 for the static resources taken from the inner proxy
+      ☐ Rent new servers
+          ☐ Planning of the servers and the services
+          ☐ Design network with high availability + support of ssl connections
+          ☐ Plan the storage solution
+            ☐ play with xfs
+            ☐ migrate old data to the new storage
+      ☐ run yatoto on docker instead of virtual machines
+      ☐ automate building of the yatoto on docker
+      ☐ install monitoring software like nagios, zabbix etc.
+      ☐ reinstall our error handling application on 64bit machine
+      ☐ install and feed event analysis software
+          ☐ make yatoto work with master/slave mode https://www.assembla.com/spaces/yatoto/tickets/cardwall#/ticket:1329
+      ☐ Run postgresql on master/master mode
+      ☐ Support the migration to 3rd party chat with jabber
+  p As you can see we have plenty of work.
+  p We offer friendly environment, good salary, and profesional expirience.
+  p To apply please continue to our first screening interview ...
+  = link_to 'Next', next_wizard_path, class: 'btn btn-success'

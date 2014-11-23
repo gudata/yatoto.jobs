@@ -1,5 +1,22 @@
+http://localhost:3000/rails/mailers/answers_mailer/new_candidate
+
 https://yatoto.herokuapp.com/
+
+export GMAIL_SMTP_USER=username@gmail.com
+export GMAIL_SMTP_PASSWORD=yourpassword
+export GMAIL_DOMAIN=empowerunited.com
+
+export GMAIL_SMTP_USER=nellyly@empowerunited.com
+export GMAIL_SMTP_PASSWORD=nelly1122
+export GMAIL_DOMAIN=empowerunited.com
+
+heroku config:add GMAIL_SMTP_USER=$GMAIL_DOMAIN=$GMAIL_DOMAIN
+heroku config:add GMAIL_SMTP_USER=$GMAIL_SMTP_USER
+heroku config:add GMAIL_SMTP_PASSWORD=$GMAIL_SMTP_PASSWORD
 
 git push heroku
 
 What you would change in yatoto.com so that it become more successfull?
+
+admin
+give gists examples of written bash/make script by you

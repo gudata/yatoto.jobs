@@ -15,6 +15,3 @@ body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
   .container.main
     = yield
 
-- 4.times do |key|
-  - key = "question_#{key}"
-  p = "#{key} ->#{session[key]}"
