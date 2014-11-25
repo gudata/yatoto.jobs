@@ -24,8 +24,8 @@ class Question
   end
 
   def save session=nil
-    valid?
     @session[@step]['answer'] = self.answer
+    valid?
   end
 
 end

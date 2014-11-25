@@ -7,6 +7,6 @@ class AnswersMailerPreview < ActionMailer::Preview
     question.answer = "ho chares"
     questions = []
     questions << question
-    AnswersMailer.new_candidate 'Administrator', questions
+    AnswersMailer.new_candidate 'Administrator', questions, 'some title'
   end
 end

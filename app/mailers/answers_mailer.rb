@@ -1,8 +1,9 @@
 class AnswersMailer < ActionMailer::Base
-  default from: "from@example.com"
-  def new_candidate position, questions
+  default from: ENV['CANDIDATES_EMAILS_FROM']
+  def new_candidate position, questions, email_title
     @position = position
     @questions = questions
-    mail to: 'i.bardarov@gmail.com', subject: "Hello!"
+
+    mail to: ENV['CANDIDATES_EMAILS_TO'], subject: email_title
   end
 end
