@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  database: yatoto_jobs_development
+
