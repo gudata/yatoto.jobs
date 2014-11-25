@@ -67,7 +67,7 @@ class WizardController < ApplicationController
   def stop_time step
     session[step] ||= {}
     started_at = session[step]['start'] || start_time(step)
-    session[step]['duration'] = time_diff(Time.parse(started_at), Time.now)
+    session[step]['duration'] = time_diff(started_at, Time.now)
   end
 
   def calc_progressbar
