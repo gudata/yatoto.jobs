@@ -10,6 +10,9 @@ ul
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :answer, as: :text, label: 'Paste the links or write a poem'
+    = form.input :line1, label: 'Github username'
+    = form.input :line1, label: 'Linked in'
+    = form.input :line1, label: 'Personal Blog'
+    = form.input :line1, label: 'Website'
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'

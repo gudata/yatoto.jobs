@@ -3,3 +3,17 @@
 @import "bootstrap";
 @import "statics";
 @import "administrators";
+
+textarea.code {
+  min-height: 250px;
+  border: 2px solid #cccccc;
+  padding: 10px;
+  font-family: 'Cutive Mono', "Courier New", Courier, monospace;
+  background-color: black;
+  color: white;
+  font-size: 1.3em;
+  resize: both;
+  max-height:500px;
+  min-height:250px;
+  max-width: 1010px;
+}

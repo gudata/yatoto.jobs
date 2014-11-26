@@ -7,10 +7,12 @@ html class="no-js" lang="#{I18n.locale}"
     title
       | We want you!
     = favicon_link_tag '/favicon.ico', type: 'image/x-icon'
+    link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
 
     = csrf_meta_tags
+
 body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
   ol.breadcrumb
     li = link_to "Home", root_url

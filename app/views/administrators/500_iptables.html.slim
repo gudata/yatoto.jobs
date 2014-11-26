@@ -6,6 +6,6 @@ p Submit a the most complicated firewall you have build (with some description) 
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :answer, as: :text
+    = form.input :answer, as: :text, input_html: { class: 'code' }
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'
