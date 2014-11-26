@@ -1,0 +1,9 @@
+h3 Make yatoto better place
+p
+  ' What you would change in the design of yatoto.com so that it become more successfull?
+
+.well
+  = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
+    = form.input :answer, label: 'Positive critique on yatoto', as: :text, input_html: { class: 'ese' }
+    = link_to 'skip', next_wizard_path, class: 'pull-right'
+    = form.button :submit, 'Submit'

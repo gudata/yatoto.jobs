@@ -1,0 +1,14 @@
+h3
+  | Introduce yourself
+
+p Give us some information about you. We would love to see your...
+
+.well
+  = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
+    = form.input :line1, label: 'E-mail'
+    = form.input :line2, label: 'Mobile'
+    = form.input :line3, label: 'Github username'
+    = form.input :line4, label: 'Linked in'
+    = form.input :line5, label: 'Personal Blog/Website'
+    = link_to 'skip', next_wizard_path, class: 'pull-right'
+    = form.button :submit, 'Submit'
