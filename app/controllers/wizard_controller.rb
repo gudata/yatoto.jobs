@@ -72,9 +72,12 @@ class WizardController < ApplicationController
 
   def calc_progressbar
     return if step == 'wicked_finish'
-    steps_left = steps[steps.index(step)..-1].count
+    current_step_number = steps.index(step) + 1.0
     all_steps = steps.count
-    @progressbar_value = ((all_steps - steps_left).abs / ((all_steps + steps_left)/2.0) * 100).round
+    @progressbar_value = ((current_step_number / all_steps ) * 100).round
+    # steps_left = steps[steps.index(step)..-1].count
+    # all_steps = steps.count
+    # @progressbar_value = ((all_steps - steps_left).abs / ((all_steps + steps_left)/2.0) * 100).round
   end
 
   def time_diff(start_time, end_time)
