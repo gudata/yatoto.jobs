@@ -4,8 +4,8 @@ h1 New candidate #{@position}
   h2 = question.step
   - if question.answer.blank?
     ul
-      - 5.times |index|
-        li = "#{index} - #{question.send("step#{index}")}"
+      - (1..5).each do |index|
+        li = "#{index} - #{question.send("line#{index}")}"
   - else
     pre
       code
