@@ -13,8 +13,9 @@ class Question
   attr_accessor :step
   attr_accessor :duration
 
-  validates_presence_of :answer
-  validates_length_of :answer, :minimum => 3
+  validates :answer, presence: true, if: ->(instance) { instance.line1.blank? }
+  validates :line1, presence: true, if: ->(instance) { instance.answer.blank? }
+
 
   def initialize params, step, session
     @step = step
