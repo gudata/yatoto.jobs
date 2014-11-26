@@ -1,0 +1,11 @@
+h3 Javascript
+p Return the concatenated result as string from two ajax requests to those URI's
+
+= text_field_tag('ajax_uri', ajax_1_secrets_url, class: 'input form-control')
+= text_field_tag('ajax_uri', ajax_2_secrets_url, class: 'input form-control')
+
+.well
+  = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
+    = form.input :answer, as: :text, input_html: { class: 'code' }, label: 'Javascript/Coffee'
+    = link_to 'skip', next_wizard_path, class: 'pull-right'
+    = form.button :submit, 'Submit'

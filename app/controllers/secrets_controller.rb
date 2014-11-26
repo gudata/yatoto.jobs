@@ -12,6 +12,19 @@ class SecretsController < ApplicationController
       }
     end
   end
+
+  def ajax_2
+    render :nothing => true, :status => 503, :content_type => 'text/html'
+  end
+
+  def ajax_1
+    if request.xhr?
+      render :text => 'Beware, the second request might fail!', :status => 200, :content_type => 'text/html'
+    else
+      render :text => 'Phu, this is not ajax request', :status => 200, :content_type => 'text/html'
+    end
+  end
+
 end
 
 __END__
