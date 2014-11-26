@@ -27,7 +27,7 @@ class WizardController < ApplicationController
   def update
     @question = Question.new(params[:question], step, session)
 
-    if @question.valid?
+    if @question.save
       session[step]['passed'] = '1'
     end
 
