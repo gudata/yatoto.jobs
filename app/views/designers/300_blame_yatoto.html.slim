@@ -1,0 +1,13 @@
+h3 Re-design Google search website from this
+.well
+  = image_tag('google1.png', class: 'img-responsive')
+p
+  ' to look like this
+.well
+  = image_tag('google2.png', class: 'img-responsive')
+
+.well
+  = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
+    = form.input :answer, label: 'CSS', as: :text, input_html: { class: 'code' }
+    = link_to 'skip', next_wizard_path, class: 'pull-right'
+    = form.button :submit, 'Submit'
