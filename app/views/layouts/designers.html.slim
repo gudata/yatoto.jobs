@@ -1,0 +1,34 @@
+doctype html
+html class="no-js" lang="#{I18n.locale}"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="viewport" content="width=980"
+    title
+      | We want you!
+    = favicon_link_tag '/favicon.ico', type: 'image/x-icon'
+    link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+body class="#{controller.action_name} #{controller_path.gsub(/[-\/]/, '-')}"
+  ol.breadcrumb
+    li = link_to "Home", root_url
+    li.active = "Web Designer"
+  .container.main
+    .icon.hidden-xs = image_tag('admin.png')
+    h1 = "Web Designer"
+    .jumbotron
+      = yield
+    - if @progressbar_value > 0
+      .progress
+        .progress-bar role="progressbar" aria-valuenow=@progressbar_value aria-valuemin="0" aria-valuemax="100" style="width: #{@progressbar_value}%;"
+          = "#{@progressbar_value}%"
+
+
+- if Rails.env.development?
+  ul
+    = request.session.keys.each do |key|
+      li = "#{key} --> #{session[key].inspect}"

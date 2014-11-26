@@ -15,14 +15,35 @@
   heroku config:add GMAIL_SMTP_PASSWORD=$GMAIL_SMTP_PASSWORD
 
 3. Add a job position
-  Make a controller app/controllers
-  Make a views folter app/views/your_controller
-  Make an html.slim file for each screen with number prefix
-    100_welcome...
-    200_what_is_the_distance_to_moon
-    300_send_contacts - 'send_contacts' is magic word which will trigger the sending by email
-    800_thanks - optional
 
+  run this command:
+  rails g controller designers
+
+  Create some file.html.(slim.erb) file for each screen with number prefix in app/views/designer folder
+    example:
+      100_welcome.html.slim
+      200_what_is_the_distance_to_moon.html.slim
+      300_send_contacts.html.slim  * 'send_contacts' is magic word which will trigger the sending by email
+      800_thanks.html.slim - optional
+
+  Add in routes
+    resources :designers
+
+  Put a link to the new position in homepage.html.slim
+
+  Edit app/controllers/designer_controller.rb
+    class DesignerController < ApplicationController
+    to become...
+    class DesignerController < WizardController
+
+  Make or reuse layout for all the questions/views
+    cp administration.html.slim desginer.html.slim
+
+  Optional:
+    Put custom CSS/Javascript in
+      app/stylesheets/desginer.css.scss
+    and don't forget to include it in app/stylesheets/application.css.scss, by adding a new line
+      @import "designers";
 
 4. Deploy
 

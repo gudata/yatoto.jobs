@@ -1,6 +1,6 @@
 class WizardController < ApplicationController
   include Wicked::Wizard
-  layout 'administration'
+
   before_action :set_steps
   before_action :setup_wizard
 
