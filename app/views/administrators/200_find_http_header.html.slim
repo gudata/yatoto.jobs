@@ -3,11 +3,15 @@ h3
     Open
   = link_to 'this', header_secrets_url, target: '_blank'
   '
-  ' URI and submit the value of the http header named "secret_header"
+  ' URI and submit the value of the http header named "secret_header".
 p
   ' There are two values hidden.
 p
-  ' The first is easy, and for the second add the header "Accept: application/json" in your request
+  ' The first on is easy and for the second - add the header "Accept: application/json" in your request.
+
+p
+  ' Fill in bellow the values of the secret_header.
+
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
     = form.input :line1, label: 'HTTP Header 1 value'

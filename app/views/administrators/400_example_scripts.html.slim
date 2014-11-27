@@ -1,10 +1,11 @@
 h3
-  | Time to show some style.
-    Submit few urls to a gists with make/bash/perl/configurations or other files that you are proud of.
+  | Time to show some style!
+p Submit few urls to a gists with make/bash/perl/configurations or other files that you are proud of.
 
-  p.small Please keep your secrets away from us.
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
     = form.input :answer, as: :text, input_html: { class: 'code' }
+    small Please keep your secrets away from us.
+    p
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'
