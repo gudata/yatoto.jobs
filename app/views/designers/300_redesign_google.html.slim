@@ -9,9 +9,10 @@ p
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :answer, label: 'CSS', as: :text, input_html: { class: 'code' }
+    = form.input :answer, label: 'CSS', as: :text, input_html: { tabindex: 1, autofocus: 'autofocus', class: 'code'}
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'
+
 
 small
   ' We know that this task is not creative, but we need to be sure that you are not afraid to mess with other people's code and you understand it. Don't worry, our code is better.

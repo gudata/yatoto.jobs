@@ -14,7 +14,7 @@ p
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :line1, label: 'HTTP Header 1 value'
+    = form.input :line1, label: 'HTTP Header 1 value', input_html: { tabindex: 1, autofocus: 'autofocus'}
     = form.input :line2, label: 'HTTP Header 2 value'
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'

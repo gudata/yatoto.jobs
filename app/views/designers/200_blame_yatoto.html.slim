@@ -4,6 +4,6 @@ p
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :answer, label: 'Critique on Yatoto', as: :text, input_html: { class: 'ese' }
+    = form.input :answer, label: 'Critique on Yatoto', as: :text, input_html: { tabindex: 1, autofocus: 'autofocus', class: 'ese'}
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'

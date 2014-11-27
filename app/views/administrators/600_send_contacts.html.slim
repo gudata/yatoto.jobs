@@ -4,10 +4,10 @@ h3
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
     p We would love to see your:
-    = form.input :line3, label: 'Github username'
+    = form.input :line3, label: 'Github username', input_html: { tabindex: 1, autofocus: 'autofocus'}
     = form.input :line4, label: 'LinkedIn'
     = form.input :line5, label: 'Personal Blog/Website'
     p Give us your contacts so that we can get in touch
-    = form.input :line1, label: 'E-mail'
+    = form.input :line1, label: 'E-mail', input_html: {type: 'email'}
     = form.input :line2, label: 'Mobile'
     = form.button :submit, 'Submit'

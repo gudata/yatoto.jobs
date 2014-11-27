@@ -5,7 +5,7 @@ p Submit the most complicated firewall you have ever built (with some descriptio
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :line1, as: :text, input_html: { class: 'code' }, label: 'NAT iptables rules'
+    = form.input :line1, as: :text, input_html: { tabindex: 1, autofocus: 'autofocus', class: 'code'}, label: 'NAT iptables rules'
     = form.input :line2, as: :text, input_html: { class: 'code' }, label: 'Complicated iptables'
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'

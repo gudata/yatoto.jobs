@@ -4,7 +4,7 @@ p Submit a link/screenshot of a website that you are proud of creating
 
 .well
   = simple_form_for(@question, url: wizard_path, method: :put,  html: {class: 'form-vertical' }) do |form|
-    = form.input :line1, label: 'Link:'
-    = form.input :line2, as: :text, input_html: { class: 'ese' }, label: 'Tell us why you are proud of it'
+    = form.input :line1, label: 'Link:', input_html: { tabindex: 1, autofocus: 'autofocus' }
+    = form.input :line2, as: :text, input_html: { tabindex: 2, class: 'ese'}, label: 'Tell us why you are proud of it'
     = link_to 'skip', next_wizard_path, class: 'pull-right'
     = form.button :submit, 'Submit'
