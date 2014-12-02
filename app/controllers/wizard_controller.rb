@@ -38,7 +38,7 @@ class WizardController < ApplicationController
         question.duration = session[step]['duration']
         question
       end
-      AnswersMailer.new_candidate('Administrator', questions, self.controller_name).deliver
+      AnswersMailer.new_candidate(self.controller_name.capitalize, questions, self.controller_name).deliver
     end
 
     render_wizard @question
