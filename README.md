@@ -48,3 +48,8 @@
 4. Deploy
 
   git push heroku
+
+5. delete the sessions from time to time with
+
+  heroku pg:psql
+  delete from sessions;
