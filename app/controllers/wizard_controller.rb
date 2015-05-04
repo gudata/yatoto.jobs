@@ -1,6 +1,10 @@
 class WizardController < ApplicationController
   include Wicked::Wizard
 
+  before_action -> {
+    ActiveRecord::SessionStore::Session.delete_all(["updated_at < ?", 3.days.ago])
+  }
+
   before_action :set_steps
   before_action :setup_wizard
 
