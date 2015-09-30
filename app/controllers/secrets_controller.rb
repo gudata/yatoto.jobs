@@ -1,6 +1,9 @@
 class SecretsController < ApplicationController
   respond_to :html, :json
-
+  before_action {
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
+  }
   def header
     respond_to do |format|
       format.html {
