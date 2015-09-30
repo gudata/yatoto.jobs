@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :secrets do
     collection do
       get :header
-      get :ajax_1
-      get :ajax_2
+      get :ajax_1, via: [ :post, :options, :get]
+      get :ajax_2, via: [ :post, :options, :get]
     end
   end
 
